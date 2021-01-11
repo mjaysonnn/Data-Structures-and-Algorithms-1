@@ -1,5 +1,3 @@
-# 15 --> 6 --> 8
-
 class Node:
 
     def __init__(self, data):
@@ -13,23 +11,31 @@ class LinkedList:
         self.head = None
         self.tail = None
 
+    def __str__(self):
+        return str(self.__dict__)
+
     def append(self, data):
         new_node = Node(data)
+        # print(new_node)
         if self.head == None:
+            # print(new_node)
             self.head = new_node
-            self.tail = self.head
+            # print(self.head)
+            self.tail = self.head # which is None
+            # print(self.tail)
             self.length = 1
         else:
             self.tail.next = new_node
+            print(self.tail.next)
             self.tail = new_node
+            print(self.tail)
             self.length += 1
-
-    def prepend(self, data):
+    def prepend(self,data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
-        self.length += 1
+        self.length +=1
 
     def insert(self, index, data):
         new_node = Node(data)
@@ -53,7 +59,7 @@ class LinkedList:
         temp = self.head
         i = 0
         if index >= self.length:
-            print("Entered wrong index")
+            print("Wrong index")
 
         if index == 0:
             self.head = self.head.next
@@ -74,7 +80,8 @@ class LinkedList:
             print(temp.data, end=' ')
             temp = temp.next
         print()
-        print('Length = ' + str(self.length))
+        print('Length =' + str(self.length))
+
 
     def reverse(self):
         prev = None
@@ -86,15 +93,11 @@ class LinkedList:
             prev = temp
         self.head = temp
 
-
 l = LinkedList()
+
 l.append(10)
-l.append(5)
-l.append(6)
-l.prepend(1)
-l.insert(2, 99)
-l.insert(34, 23)
-l.remove(5)
-l.reverse()
-l.printl()
-print(l.head.data, l.tail.data)
+l.append(20)
+l.append(30)
+print(l)
+exit()
+

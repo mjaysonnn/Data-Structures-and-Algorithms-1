@@ -3,8 +3,11 @@ x = [5,2,8,1,6,7,4,9]
 #Heapify method sorts the list , this is min heap  
 heapq.heapify(x)
 print(x)
+
 heapq.heappush(x,0)
 print(x)
+
+exit()
 print(heapq.heappop(x))
 print(x)
 # Used to pop and push the element in same time

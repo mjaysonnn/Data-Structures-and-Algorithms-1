@@ -23,7 +23,10 @@ class Hashtable:
 		value may already be present
 		"""
 		hash_value = self.hash(key)
+		# print(hash_value)
 		reference = self.hashmap[hash_value]
+		# print(reference)
+		
 		for i in range(len(reference)):
 			if reference[i][0] == key:
 				reference[i][1] = value
@@ -55,12 +58,18 @@ class Hashtable:
 		return None
 
 h=Hashtable()
+
 h.put('grapes',1000)
+# print(h)
+
+
 h.put('apples',10)
 h.put('ora',300)
 h.put('banan',200)
 print(h.get('grapes'))
+
 print(h)
+exit()
 h.remove('apples')
 print(h)
 
